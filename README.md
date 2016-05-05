@@ -7,6 +7,32 @@
 #####Install
 Please use `npm install -g bracks-cli`. `-g` because it is a command line utility and is preferred to be exposed globally. Then, run `bracks -v` to make sure that it has been installed successfully. If you encounter with a problem or getting `EACCES` error, please read [fixing-npm-permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions). If still not successful, please mention that in the `issues`. It will be responded back as fast as possible.
 
+#####How to use
+You can use `bracks` either by manually run it whenever you want and pass the `-o` (flag for output), or you can have it watch the provided *bracks* directory by passing the `-w` (flag for watch).
+
+If you run it with `-o`, here is how you can use it:
+
+Please create a directory and name it `bracks`. Then, put all `html` or `ejs` files that are written in a `bracks` syntax in this direcory. Files can be located in sub-direcories. It doesn't matter. The parser will find them, convert them all to html or ejs, and pipe the result documents to the provided destination. The parser presumes everything under `bracks` directory is written in a `bracks` style. As a result, they all being converted to html and/or ejs and being piped to the provided target directory.
+
+If you run it with `-w`, here is how you can use it:
+
+Instead of writing all files completely and then pass them to `bracks`, you can have it watch the provided *bracks* directory. By running it this way, upon any changes in any files under the given *bracks* directory, the parser parses the files, converts them all to html or ejs (whatever the original file extension is), and pipes the result documents to the provided target directory. Please notice here, in this mode, if the parser doesn't find any errors, nothing will be shown on the console in order to avoid disrupting the flow of development. So, if you don't see any errors on the console after you saved your file, you can have a pretty good confidence that changes were being transferred correctly to the corresponding file under the provided target directory.
+
+#####List of command line options
+The complete list of `bracks` command line options:
+
+1. `bracks -o <path to bracks directory> <target directory>`
+
+    example: `bracks -o /home/yourproj/bracks /home/yourproj/views`
+
+2. `bracks -w <path to bracks directory> <target directory>`
+
+    example: `bracks -w /home/yourproj/bracks /home/yourproj/views`
+
+3. `bracks -v` (show the current version of the app)
+
+4. `bracks -h` (show the help menu)
+
 #####Example of a `bracks` style html document
 *index.html*:
 ```
@@ -56,32 +82,6 @@ html[
   ]body
 ]html
 ```
-
-#####How to use
-You can use `bracks` either by manually run it whenever you want and pass the `-o` (flag for output), or you can have it watch the provided *bracks* directory by passing the `-w` (flag for watch).
-
-If you run it with `-o`, here is how you can use it:
-
-Please create a directory and name it `bracks`. Then, put all `html` or `ejs` files that are written in a `bracks` syntax in this direcory. Files can be located in sub-direcories. It doesn't matter. The parser will find them, convert them all to html or ejs, and pipe the result documents to the provided destination. The parser presumes everything under `bracks` directory is written in a `bracks` style. As a result, they all being converted to html and/or ejs and being piped to the provided target directory.
-
-If you run it with `-w`, here is how you can use it:
-
-Instead of writing all files completely and then pass them to `bracks`, you can have it watch the provided *bracks* directory. By running it this way, upon any changes in any files under the given *bracks* directory, the parser parses the files, converts them all to html or ejs (whatever the original file extension is), and pipes the result documents to the provided target directory. Please notice here, in this mode, if the parser doesn't find any errors, nothing will be shown on the console in order to avoid disrupting the flow of development. So, if you don't see any errors on the console after you saved your file, you can have a pretty good confidence that changes were being transferred correctly to the corresponding file under the provided target directory.
-
-#####List of command line options
-The complete list of `bracks` command line options:
-
-1. `bracks -o <path to bracks directory> <target directory>`
-
-    example: `bracks -o /home/yourproj/bracks /home/yourproj/views`
-
-2. `bracks -w <path to bracks directory> <target directory>`
-
-    example: `bracks -w /home/yourproj/bracks /home/yourproj/views`
-
-3. `bracks -v` (show the current version of the app)
-
-4. `bracks -h` (show the help menu)w
 
 [travis-image]: https://img.shields.io/travis/mawni/bracks-cli/master.svg
 [travis-url]: https://travis-ci.org/mawni/bracks-cli
