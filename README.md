@@ -2,7 +2,7 @@
 
 [![travis build][travis-image]][travis-url] [![npm version][npm-image]][npm-url] 
 
-`bracks` command line interface. If you don't know what `bracks` style document is, please read [bracks](https://github.com/mawni/nodejs-bracks).
+`bracks` command line interface. If you don't know what `bracks` style document is, please read [bracks-parser](https://github.com/mawni/nodejs-bracks-parser).
 
 #####Install
 Please use `npm install -g bracks-cli`. `-g` because it is a command line utility and is preferred to be exposed globally. Then, run `bracks -v` to make sure that it has been installed successfully. If you encounter with a problem or getting `EACCES` error, please read [fixing-npm-permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions). If still not successful, please mention that in the `issues`. It will be responded back as fast as possible.
