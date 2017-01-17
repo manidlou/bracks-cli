@@ -1,6 +1,6 @@
 {
   "name": "bracks-cli",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "bracks command line interface",
   "main": "bracks-cli.js",
   "bin": {
