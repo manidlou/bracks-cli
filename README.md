@@ -83,9 +83,7 @@ html[
 ]html
 ```
 
-[travis-image]: https://img.shields.io/travis/mawni/bracks-cli/master.svg
-[travis-url]: https://travis-ci.org/mawni/bracks-cli
+[travis-image]: https://img.shields.io/travis/manidlou/bracks-cli/master.svg
+[travis-url]: https://travis-ci.org/manidlou/bracks-cli
 [npm-image]: https://img.shields.io/npm/v/bracks-cli.svg?maxAge=2592000
-[npm-url]: https://npmjs.org/package/bracks-cli
-[downloads-image]: https://img.shields.io/npm/dm/bracks-cli.svg?maxAge=2592000
-[downloads-url]: https://npmjs.org/package/bracks-cli
+[npm-url]: https://www.npmjs.com/package/bracks-cli

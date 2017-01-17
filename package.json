@@ -7,14 +7,14 @@
     "bracks": "./bracks-cli.js"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec ./test/*.js"
+    "test": "mocha"
   },
   "keywords": [
     "bracks",
     "html",
     "ejs"
   ],
-  "author": "Mawni Maghsoudlou",
+  "author": "Mani Maghsoudlou",
   "license": "MIT",
   "dependencies": {
     "node-watch": "^0.3.5",
@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mawni/bracks-cli.git"
+    "url": "git+https://github.com/manidlou/bracks-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/mawni/bracks-cli/issues"
+    "url": "https://github.com/manidlou/bracks-cli/issues"
   },
-  "homepage": "https://github.com/mawni/bracks-cli#readme",
+  "homepage": "https://github.com/manidlou/bracks-cli#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
