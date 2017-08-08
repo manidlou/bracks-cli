@@ -4,7 +4,7 @@
  * bracks-cli
  * This software is released under the MIT license:
  * 
- * Copyright (c) <2016> <Mawni Maghsoudlou>
+ * Copyright (c) 2017 Mani Maghsoudlou
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -36,11 +36,6 @@
 
 
 'use strict';
-
-/**
- * Module dependencies.
- * @private
- */
 
 const path = require('path');
 const Vfile = require('vinyl');
@@ -519,36 +514,34 @@ function parse_files(cb) {
         });
       }
     })).pipe(vfs.dest(TARGET_DIR))
-  .on('end', function() {
-    return cb(null, 0);
-  });
+    .on('end', function() {
+      return cb(null, 0);
+    });
 }
 
-if (BRACKS_COMMAND !== null && BRACKS_COMMAND !== undefined && BRACKS_COMMAND === 'bracks') {
+if (BRACKS_COMMAND && BRACKS_COMMAND === 'bracks') {
   if (BRACKS_COMMAND_FLAG === '-o') {
-    if (BRACKS_DIR === null || BRACKS_DIR === undefined ||
-        TARGET_DIR === null || TARGET_DIR === undefined) {
+    if (!BRACKS_DIR || !TARGET_DIR) {
       console.log('|\n--> bracks error: source and destination cannot be null. please type \'bracks -h\' to get more help.\n');
       return;
     } else {
       parse_files(function(err, done) {
-        if (err !== null) {
+        if (err) {
           console.log('|\n--> bracks error: ' + err.message + '\n');
           return;
         }
         if (done === 0) {
           console.log('|\n--> bracks finished successfully.\n');
         }
-      });                                          
+      });
     }
   } else if (BRACKS_COMMAND_FLAG === '-w') {
-    if (BRACKS_DIR === null || BRACKS_DIR === undefined ||
-        TARGET_DIR === null || TARGET_DIR === undefined) {
+    if (!BRACKS_DIR || !TARGET_DIR) {
       console.log('|\n--> bracks error: source and destination cannot be null. please type \'bracks -h\' to get more help.\n');
       return;
     } else {
       parse_files(function(err) {
-        if (err !== null) {
+        if (err) {
           console.log('|\n--> bracks error: ' + err.message + '\n');
           return;
         }
@@ -556,11 +549,11 @@ if (BRACKS_COMMAND !== null && BRACKS_COMMAND !== undefined && BRACKS_COMMAND ==
       console.log('|\n--> bracks has started watching [' + BRACKS_DIR + ']..\n');
       watch(BRACKS_DIR, function() {
         parse_files(function(err) {
-          if (err !== null) {
+          if (err) {
             console.log('|\n--> bracks error: ' + err.message + '\n');
             return;
           }
-        });                                          
+        });
       });
     }
   } else if (BRACKS_COMMAND_FLAG === '-h') {

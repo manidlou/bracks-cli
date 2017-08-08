@@ -1,13 +1,13 @@
-#bracks-cli
+# bracks-cli
 
 [![travis build][travis-image]][travis-url] [![npm version][npm-image]][npm-url] 
 
 `bracks` command line interface. If you don't know what `bracks` style document is, please read [bracks-parser](https://github.com/manidlou/nodejs-bracks-parser).
 
-#####Install
+##### Install
 Please use `npm install -g bracks-cli`. `-g` because it is a command line utility and is preferred to be exposed globally. Then, run `bracks -v` to make sure that it has been installed successfully. If you encounter with a problem or getting `EACCES` error, please read [fixing-npm-permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions). If still not successful, please mention that in the `issues`. It will be responded back as fast as possible.
 
-#####How to use
+##### How to use
 You can use `bracks` either by manually run it whenever you want and pass the `-o` (flag for output), or you can have it watch the provided *bracks* directory by passing the `-w` (flag for watch).
 
 If you run it with `-o`, here is how you can use it:
@@ -18,7 +18,7 @@ If you run it with `-w`, here is how you can use it:
 
 Instead of writing all files completely and then pass them to `bracks`, you can have it watch the provided *bracks* directory. By running it this way, upon any changes in any files under the given *bracks* directory, the parser parses the files, converts them all to html or ejs (whatever the original file extension is), and pipes the result documents to the provided target directory. Please notice here, in this mode, if the parser doesn't find any errors, nothing will be shown on the console in order to avoid disrupting the flow of development. So, if you don't see any errors on the console after you saved your file, you can have a pretty good confidence that changes were being transferred correctly to the corresponding file under the provided target directory.
 
-#####List of command line options
+##### List of command line options
 The complete list of `bracks` command line options:
 
 1. `bracks -o <path to bracks directory> <target directory>`
@@ -33,7 +33,7 @@ The complete list of `bracks` command line options:
 
 4. `bracks -h` (show the help menu)
 
-#####Example of a `bracks` style html document
+##### Example of a `bracks` style html document
 *index.html*:
 ```
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ html[
   ]body
 ]html
 ```
-#####Example of a `bracks` style ejs document
+##### Example of a `bracks` style ejs document
 *index.ejs*:
 ```
 <!DOCTYPE html>
